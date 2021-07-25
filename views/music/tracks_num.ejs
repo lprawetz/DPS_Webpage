@@ -1,0 +1,14 @@
+<% layout("layouts/boilerplate") %>
+    <div class="container">
+        <h1>Number of Tracks</h1>
+        <form action="/music/new" method="POST">
+            <div class="col-sm-6">
+                <div class="mb-1">
+                    <label for="tracks_num" class="form-label">Number of Tracks</label>
+                    <input type="number" class="form-control" id="tracks_num" name="track_num"
+                        placeholder="Number of Tracks">
+                </div>
+                <button class="btn btn-primary">Next</button>
+            </div>
+        </form>
+    </div>

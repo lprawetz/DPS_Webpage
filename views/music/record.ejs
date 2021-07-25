@@ -1,0 +1,16 @@
+<% layout("layouts/boilerplate") %>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card mb-3">
+                <img src="<%= record.cover %>" height="250" class="card-img-top" alt="<%= record.name %>">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= record.name %>
+                    </h5>
+                    <p class="card-text">
+                        <%= record.songs %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
