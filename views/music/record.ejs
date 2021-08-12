@@ -1,16 +1,23 @@
 <% layout("layouts/boilerplate") %>
+<div class="container">
     <div class="row">
-        <div class="col-6 offset-3">
-            <div class="card mb-3">
-                <img src="<%= record.cover %>" height="250" class="card-img-top" alt="<%= record.name %>">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <%= record.name %>
-                    </h5>
-                    <p class="card-text">
-                        <%= record.songs %>
-                    </p>
-                </div>
+        <div class="col-6">
+            <img src="<%= record.cover %>" class="img-fluid" alt="<%= record.name %>">
+        </div>
+        <div class="col-6">
+            <h1 class="mt-4">
+                <%= record.name %>
+            </h1>
+            <ol>
+                <% for(let i = 0; i<record.songs.length; i++) { %>
+                <li class="lead">
+                    <%= record.songs[i] %>
+                </li>
+                <% } %>
+            </ol>
+            <div class="row">
+                <a href=""><i class="fab fa-spotify fa-lg"></i></a>
             </div>
         </div>
     </div>
+</div>

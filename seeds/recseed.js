@@ -15,7 +15,7 @@ db.once('open', () => {
 
 const rec1 = new Record({
     name: "Era",
-    songs: ["01. Die Alone", "02. Behind The Walls", "03. 480 BC"],
+    songs: ["Die Alone", "Behind The Walls", "480 BC"],
     published: 2019,
     cover: "ERA_web.jpg"
 });
