@@ -1,21 +1,8 @@
 const express = require("express");
 const router = express.Router();
-
+const { validateShow } = require("../middleware");
 const catchAsync = require("../utils/catchAsync");
-const ExpressError = require("../utils/ExpressError");
 const Show = require("../models/shows");
-const { showSchema } = require("../schemas");
-
-
-const validateShow = (req, res, next) => {
-    const { error } = showSchema.validate(req.body)
-    if (error) {
-        const msg = error.details.map(elem => elem.message).join(",")
-        throw new ExpressError(msg, 400)
-    } else {
-        next();
-    }
-}
 
 router.get("/", catchAsync(async (req, res) => {             //Shows
     const shows = await Show.find({}).sort({ date: "asc" });
@@ -32,5 +19,26 @@ router.post("/", validateShow, catchAsync(async (req, res) => {
     res.redirect("/shows");
 }));
 
+router.get("/:id/edit", catchAsync(async (req, res) => {
+    const { id } = req.params;
+    const show = await Show.findById(id);
+    if (!show) {
+        res.send("Show not found!");
+        console.log(show);
+    }
+    res.render("shows/edit", { show })
+}));
+
+router.put("/:id", catchAsync(async (req, res) => {
+    const { id } = req.params;
+    await Show.findByIdAndUpdate(id, { ...req.body.show });
+    res.redirect("/shows");
+}));
+
+router.delete("/:id", catchAsync(async (req, res) => {
+    const { id } = req.params;
+    await Show.findByIdAndDelete(id);
+    res.redirect("/shows");
+}));
 
 module.exports = router;
