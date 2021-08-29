@@ -1,0 +1,91 @@
+/* General Styles */
+
+.background-banner {
+    background-image: url("/media/Backbanner.jpg");
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 20rem;
+    min-height: 250px;
+    z-index: 1;
+}
+
+.background {
+    background-image: url("/media/Backblur.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    height: 1400px;
+}
+
+.backbanner-text {
+    color: white;
+    text-shadow: 2px 2px 25px black;
+    text-decoration: overline;
+    font-family: 'Noto Sans JP', sans-serif;    
+    font-weight: 300;
+    font-size: 4em;
+}
+
+.form-block {
+    background-color: rgba(128, 166, 158, 0.1);
+    border: solid;
+    border-radius: 2%;
+    min-width: 23em;
+}
+
+/* Navbar Styles */
+
+.navbar {
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Show Styles */
+
+.gig-entry {
+    border-bottom: 1px solid rgba(128, 166, 158, 0.5);
+}
+
+.gig-entry:first-of-type {
+    border-top: 1px solid rgba(128, 166, 158, 0.5);
+}
+
+.gig-entry:hover {
+    background-color: rgba(128, 166, 158, 0.1);
+}
+
+.ticket-button {
+    color: white;
+    background-color: rgba(51, 89, 82, 0.3);
+    border: 3px solid;
+    border-color: #335952;
+    border-radius: 0%;
+}
+
+.ticket-button:hover {
+background-color: #335952;
+border-color: #335952;
+}
+
+/* Footer Styles */
+
+#footer {
+    background-color: black;
+}
+
+#footer-logo {
+    max-width: 15%;
+    height: 10%;
+}
+
+#icons {
+    font-size: 2rem;
+}
+
+/* Record Styles */
+
+.record-cover {
+    max-height: 27em;
+}

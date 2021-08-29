@@ -13,4 +13,6 @@ router.get("/:id", catchAsync(async (req, res) => {
     res.render("music/record", { record });
 }));
 
+
+
 module.exports = router;

@@ -11,3 +11,10 @@ module.exports.validateShow = (req, res, next) => {
     }
 };
 
+module.exports.isLoggedIn = (req, res, next) => {
+    if (!req.session.user_id) {
+        req.flash("error", "Please log in!");
+        res.redirect("/login");
+    }
+    next();
+};

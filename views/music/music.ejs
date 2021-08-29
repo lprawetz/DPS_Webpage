@@ -1,27 +1,26 @@
 <% layout("layouts/boilerplate") %>
-    <div class="container">
-        <h1>Records</h1>
+<div class="d-flex justify-content-center background-banner">
+    <h1 class="align-self-center text-white backbanner-text">RECORDS</h1>
+</div>
+<div class="row">
+    <% if(isLoggedIn) { %>
+    <div class="d-flex justify-content-center my-3">
         <div class="row">
-            <% for (let record of records) { %>
-                <div class="col-lg-3 mb-5">
-                    <a href="/music/<%= record._id %>">
-                        <img src="<%= record.cover %>" height="250" alt="<%= record.name %>">
-                    </a>
-                </div>
-                <% } %>
+            <a href="shows/new">
+                <button class="btn btn-primary">New</button>
+            </a>
         </div>
-
-        <!-- <div id="putTheWidgetHere"></div>
-    <script type="text/javascript">
-        SC.oEmbed('https://soundcloud.com/forss/sets/soulhack', {
-            element: document.getElementById('putTheWidgetHere')
-        });
-    </script>
-
-    <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
-    <script>
-        SC.initialize({
-            client_id: 'YOUR_CLIENT_ID',
-            redirect_uri: 'https://example.com/callback'
-        });
-    </script> -->
+    </div>
+    <% } %>
+</div>
+<div class="row">
+    <div class="d-flex justify-content-evenly">
+        <% for (let record of records) { %>
+        <div class="align-self-center mb-5">
+            <a href="/music/<%= record._id %>">
+                <img src="<%= record.cover %>" height="250" alt="<%= record.name %>">
+            </a>
+        </div>
+        <% } %>
+    </div>
+</div>

@@ -1,42 +1,47 @@
 <% layout("layouts/boilerplate") %>
-<div class="container">
-    <h1>Add new Show</h1>
-    <form action="/shows" method="POST" novalidate class="validated-form">
-        <div class="col-sm-6">
-            <div class="mb-1">
-                <label for="venue" class="form-label">Venue</label>
-                <input type="text" class="form-control" id="venue" name="show[venue]" placeholder="Club/Festival"
-                    required>
-                <div class="valid-feedback">
-                    Looks good!
+<div class="d-flex justify-content-center background-banner">
+    <h1 class="align-self-center backbanner-text">Add new show</h1>
+</div>
+<div class="container d-flex justify-content-center align-items-center my-5">
+    <div class="row form-block">
+        <div class="col">
+            <form action="/shows" method="POST" novalidate class="validated-form">
+                <div class="mb-1">
+                    <label for="venue" class="form-label text-white">Venue</label>
+                    <input type="text" class="form-control" id="venue" name="show[venue]" placeholder="Club/Festival"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                 </div>
-            </div>
-            <div class="mb-1">
-                <label for="location" class="form-label">Location</label>
-                <input type="text" class="form-control" id="location" name="show[location]" placeholder="City/Country"
-                    required>
-                <div class="valid-feedback">
-                    Looks good!
+                <div class="mb-1">
+                    <label for="location" class="form-label text-white">Location</label>
+                    <input type="text" class="form-control" id="location" name="show[location]"
+                        placeholder="City/Country" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                 </div>
-            </div>
+                <div class="mb-1">
+                    <label for="date" class="form-label text-white">Date</label>
+                    <input type="text" class="form-control" id="date" name="show[date]" placeholder="YYYY-MM-DD"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="ticketstore" class="form-label text-white">Ticketstore</label>
+                    <input type="text" class="form-control" id="ticketstore" name="show[ticketstore]"
+                        placeholder="Ticketsalelink" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="d-grid gap-2 my-3">
+                    <button class="btn btn-primary mb-1">Save</button>
+                </div>
+            </form>
         </div>
-        <div class="col-sm-6">
-            <div class="mb-1">
-                <label for="date" class="form-label">Date</label>
-                <input type="text" class="form-control" id="date" name="show[date]" placeholder="YYYY-MM-DD" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="ticketstore" class="form-label">Ticketstore</label>
-                <input type="text" class="form-control" id="ticketstore" name="show[ticketstore]"
-                    placeholder="Ticketsalelink" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <button class="btn btn-primary">Save</button>
-        </div>
-    </form>
+    </div>
 </div>
