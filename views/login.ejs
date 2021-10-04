@@ -1,13 +1,17 @@
-<% layout("layouts/boilerplate") %>
-<div class="container">
-    <div class="row justify-content-center mt-5">
-        <div class="col-auto">
-            <h2 class="text-white">Login</h2>
-            <form action="/login" method="POST" novalidate class="validated-form">
-                <input type="text" name="username" id="username" placeholder="Username">
-                <input type="password" name="password" id="password" placeholder="Password">
-                <button class="btn btn-outline-dark">Login</button>
-            </form>
+<div class="background">
+    <% layout("layouts/boilerplate") %>
+    <%- include("./partials/navbar") %>
+    <%- include("./partials/flash") %>
+    <div class="container">
+        <div class="row justify-content-center my-5 login-box">
+            <div class="col-auto">
+                <h2 class="text-white">Login</h2>
+                <form action="/login" method="POST" novalidate class="validated-form ">
+                    <input type="text" name="username" id="username" placeholder="Username">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <button class="btn btn-primary">Login</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

@@ -6,17 +6,9 @@
     background-attachment: scroll;
     background-position: center top;
     background-repeat: no-repeat;
-    height: 20rem;
+    height: 20em;
     min-height: 250px;
-    z-index: 1;
-}
-
-.background {
-    background-image: url("/media/Backblur.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: top;
-    height: 1400px;
+    z-index: 10;
 }
 
 .backbanner-text {
@@ -26,6 +18,17 @@
     font-family: 'Noto Sans JP', sans-serif;    
     font-weight: 300;
     font-size: 4em;
+    z-index: 10;
+    line-height: 1.6em;
+}
+
+.background {
+    background-image: url("/media/Backblur.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    min-height: 70vh;
+    z-index: 1;
 }
 
 .form-block {
@@ -33,6 +36,35 @@
     border: solid;
     border-radius: 2%;
     min-width: 23em;
+}
+
+.custom-button {
+    color: white;
+    background-color: rgba(51, 89, 82, 0.3);
+    border: 3px solid;
+    border-color: #335952;
+    border-radius: 0%;
+}
+
+.custom-button:hover {
+background-color: #335952;
+border-color: #335952;
+}
+
+/* Login Styles */
+
+.login-box {
+    height: 49.2vh;
+}
+
+/* Home Styles */
+
+.home-background {
+    background-image: url("/media/Background_old.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    height: 100vh;
 }
 
 /* Navbar Styles */
@@ -56,17 +88,9 @@
     background-color: rgba(128, 166, 158, 0.1);
 }
 
-.ticket-button {
-    color: white;
-    background-color: rgba(51, 89, 82, 0.3);
-    border: 3px solid;
-    border-color: #335952;
+.admin-button {
+    min-width: 80px;
     border-radius: 0%;
-}
-
-.ticket-button:hover {
-background-color: #335952;
-border-color: #335952;
 }
 
 /* Footer Styles */
@@ -74,20 +98,34 @@ border-color: #335952;
 #footer {
     background-color: black;
     position: sticky;
-    top: auto;
+    top: inherit;
 }
 
 #footer-logo {
-    max-width: 12rem;
-    height: 10rem;
+    max-width: 12em;
+    height: 10em;
 }
 
 #icons {
-    font-size: 1.7rem;
+    font-size: 1.7em;
 }
 
 /* Record Styles */
 
 .record-cover {
     max-height: 27em;
+}
+
+/* Music Styles */
+
+.image-list {
+    height: 18em;
+}
+
+/* Contact & Presskit Styles */
+
+.custom-card {
+    color: white;
+    border: 1px solid rgba(12, 30, 80, 0.5);
+    background-color: rgba(5, 14, 38, 0.4);
 }

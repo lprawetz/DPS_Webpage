@@ -1,26 +1,25 @@
-<% layout("layouts/boilerplate") %>
-<div class="d-flex justify-content-center background-banner">
-    <h1 class="align-self-center text-white backbanner-text">RECORDS</h1>
-</div>
-<div class="row">
-    <% if(isLoggedIn) { %>
-    <div class="d-flex justify-content-center my-3">
-        <div class="row">
+<div class="background">
+    <% layout("layouts/boilerplate") %>
+    <%- include("../partials/navbar") %>
+    <div class="d-flex justify-content-center background-banner">
+        <h1 class="align-self-center text-center backbanner-text">RECORDS</h1>
+    </div>
+    <div>
+        <% if(isLoggedIn) { %>
+        <div class="d-flex justify-content-center mt-3">
             <a href="shows/new">
                 <button class="btn btn-primary">New</button>
             </a>
         </div>
-    </div>
-    <% } %>
-</div>
-<div class="row">
-    <div class="d-flex justify-content-evenly">
-        <% for (let record of records) { %>
-        <div class="align-self-center mb-5">
-            <a href="/music/<%= record._id %>">
-                <img src="<%= record.cover %>" height="250" alt="<%= record.name %>">
-            </a>
-        </div>
         <% } %>
+    </div>
+    <div class="text-center">
+        <div class="container">
+            <% for (let record of records) { %>
+            <a href="/music/<%= record._id %>">
+                <img src="<%= record.cover %>" alt="<%= record.name %>" class="m-4 image-list">
+            </a>
+            <% } %>
+        </div>
     </div>
 </div>

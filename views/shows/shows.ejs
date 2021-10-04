@@ -1,72 +1,77 @@
-<% layout("layouts/boilerplate") %>
-<div class="d-flex justify-content-center background-banner">
-    <h1 class="align-self-center backbanner-text">UPCOMING SHOWS</h1>
-</div>
-<div class="container mt-5">
-    <% if(isLoggedIn) { %>
-    <div class="row text-center mb-4">
-        <a href="shows/new">
-            <button class="btn btn-primary btn-lg mt-2">New Show</button>
-        </a>
+<div class="background">
+    <% layout("layouts/boilerplate") %>
+    <%- include("../partials/navbar") %>
+    <%- include("../partials/flash") %>
+    <div class="d-flex justify-content-center background-banner">
+        <h1 class="align-self-center text-center backbanner-text">UPCOMING SHOWS</h1>
     </div>
-    <% } %>
-    <div class="row mb-5">
-        <table class="table">
-            <tbody>
-                <% for (let show of shows) { %>
-                <% if(!isLoggedIn) { %>
-                <tr class="d-flex gig-entry">
-                    <td class="col-2 text-white fs-5 d-flex align-self-center border-bottom-0">
-                        <%= show.date.toString().slice(4, 15) %>
-                    </td>
-                    <td class="col-6 text-white fs-5 d-flex align-self-center border-bottom-0">
-                        <b>
-                            <%= show.venue %>
-                        </b>
-                    </td>
-                    <td class="col-2 text-white fs-5 align-self-center border-bottom-0">
-                        <%= show.location %>
-                    </td>
-                    <td class="col-2 border-bottom-0">
-                        <a href="<%= show.ticketstore %>">
-                            <button class="btn btn-lg ticket-button">Tickets</button>
-                        </a>
-                    </td>
-                    <% } %>
+    <div class="container mt-5">
+        <% if(isLoggedIn) { %>
+        <div class="d-flex justify-content-center mb-4">
+            <a href="shows/new">
+                <button class="btn btn-primary btn-lg mt-2">New Show</button>
+            </a>
+        </div>
+        <% } %>
+        <div class="row mb-5">
+            <table class="table">
+                <tbody>
+                    <% for (let show of shows) { %>
+                    <% if(!isLoggedIn) { %>
+                    <tr class="d-flex flex-column flex-md-row text-light fs-5 gig-entry">
+                        <td class="col-md-2 align-self-center border-bottom-0">
+                            <%= show.date.toString().slice(4, 15) %>
+                        </td>
+                        <td class="col-md-6 align-self-center border-bottom-0">
+                            <b>
+                                <%= show.venue %>
+                            </b>
+                        </td>
+                        <td class="col-md-2 align-self-center border-bottom-0">
+                            <%= show.location %>
+                        </td>
+                        <td class="col-md-2 align-self-center border-bottom-0">
+                            <a href="<%= show.ticketstore %>">
+                                <button class="btn btn-lg custom-button">Tickets</button>
+                            </a>
+                        </td>
+                        <% } %>
+                    </tr>
                     <% if(isLoggedIn) { %>
-                </tr>
-                <tr class="d-flex gig-entry">
-                    <td class="col-2 text-white fs-5 d-flex align-self-center border-bottom-0">
-                        <%= show.date.toString().slice(4, 15) %>
-                    </td>
-                    <td class="col-4 text-white fs-5 d-flex align-self-center border-bottom-0">
-                        <b>
-                            <%= show.venue %>
-                        </b>
-                    </td>
-                    <td class="col-2 text-white fs-5 align-self-center border-bottom-0">
-                        <%= show.location %>
-                    </td>
-                    <td class="col-2 border-bottom-0">
-                        <a href="<%= show.ticketstore %>">
-                            <button class="btn btn-lg ticket-button">Tickets</button>
-                        </a>
-                    </td>
-                    <td class="col-1 align-self-center border-bottom-0">
-                        <a href="shows/<%= show._id %>/edit">
-                            <button class="btn btn-success">Edit</button>
-                        </a>
-                    </td>
-                    <td class="col-1 align-self-center border-bottom-0">
-                        <form action="/shows/<%= show._id %>?_method=DELETE" method="POST" novalidate
-                            class="validated-form">
-                            <button class="btn btn-danger">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-                <% } %>
-                <% } %>
-            </tbody>
-        </table>
+                    <tr class="d-flex flex-column flex-md-row text-light fs-5 gig-entry">
+                        <td class="col-md-2 align-self-center border-bottom-0">
+                            <%= show.date.toString().slice(4, 15) %>
+                        </td>
+                        <td class="col-md-4 align-self-center border-bottom-0">
+                            <b>
+                                <%= show.venue %>
+                            </b>
+                        </td>
+                        <td class="col-md-2 align-self-center border-bottom-0">
+                            <%= show.location %>
+                        </td>
+                        <td class="col-md-2 align-self-center border-bottom-0">
+                            <a href="<%= show.ticketstore %>">
+                                <button class="btn btn-lg custom-button">Tickets</button>
+                            </a>
+                        </td>
+                        <div class="col-12 col-md-2">
+                            <td class="align-self-center border-bottom-0">
+                                <div class="btn-toolbar">
+                                    <a href="shows/<%= show._id %>/edit" class="me-3 my-1">
+                                        <button class="btn btn-success admin-button">Edit</button>
+                                    </a>
+                                    <form action="/shows/<%= show._id %>?_method=DELETE" method="POST" class="my-1">
+                                        <button class="btn btn-danger admin-button">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </div>
+                    </tr>
+                    <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
