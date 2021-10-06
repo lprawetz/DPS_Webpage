@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
+
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
@@ -34,7 +38,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 const sessionConfig = {
-    secret: "(here_will_be_a_better_secret_when_deployed!)",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
