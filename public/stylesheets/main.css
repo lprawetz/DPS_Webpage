@@ -121,11 +121,3 @@ border-color: #335952;
 .image-list {
     height: 18em;
 }
-
-/* Contact & Presskit Styles */
-
-.custom-card {
-    color: white;
-    border: 1px solid rgba(12, 30, 80, 0.5);
-    background-color: rgba(5, 14, 38, 0.4);
-}

@@ -16,9 +16,11 @@
     <div class="text-center">
         <div class="container">
             <% for (let record of records) { %>
-            <a href="/music/<%= record._id %>">
-                <img src="<%= record.cover %>" alt="<%= record.name %>" class="m-4 image-list">
-            </a>
+            <div class="d-inline-flex m-4">
+                <a href="/music/<%= record._id %>">
+                    <img src="<%= record.cover %>" alt="<%= record.name %>" class="image-list">
+                </a>
+            </div>
             <% } %>
         </div>
     </div>
