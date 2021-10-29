@@ -10,16 +10,20 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
-
-const shows = require("./routes/shows");
-const music = require("./routes/music");
-const media = require("./routes/media");
-const contact = require("./routes/contact");
-const user = require("./routes/user");
-
+const helmet = require("helmet");
 const mongoSanitize = require('express-mongo-sanitize');
 
-mongoose.connect("mongodb://localhost:27017/dpsband", {
+const showsRoutes = require("./routes/shows");
+const musicRoutes = require("./routes/music");
+const mediaRoutes = require("./routes/media");
+const contactRoutes = require("./routes/contact");
+const userRoutes = require("./routes/user");
+
+const MongoStore = require("connect-mongo");
+
+const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/dpsband";
+
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -38,7 +42,19 @@ app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    secret: process.env.SECRET,
+    touchAfter: 24 * 60 * 60
+});
+
+store.on("error", function (e) {
+    console.log("SESSION STORE ERROR", e)
+});
+
 const sessionConfig = {
+    store,
+    name: "session",
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
@@ -50,6 +66,8 @@ const sessionConfig = {
 }
 app.use(session(sessionConfig));
 app.use(flash());
+app.use(helmet({ contentSecurityPolicy: false }));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
@@ -66,11 +84,11 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use("/shows", shows);
-app.use("/music", music);
-app.use("/media", media);
-app.use("/contact", contact);
-app.use("/", user);
+app.use("/shows", showsRoutes);
+app.use("/music", musicRoutes);
+app.use("/media", mediaRoutes);
+app.use("/contact", contactRoutes);
+app.use("/", userRoutes);
 
 
 app.get("/", (req, res) => {
@@ -87,6 +105,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error", { err });
 });
 
-app.listen(3000, () => {
-    console.log("Server is running in Port 3000!")
+const port = process.env.port || 3000;
+app.listen(port, () => {
+    console.log(`Server is running in Port ${port}!`)
 });

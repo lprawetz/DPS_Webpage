@@ -5,15 +5,15 @@ const bcrypt = require("bcrypt");
 const User = require("../models/user");
 const catchAsync = require("../utils/catchAsync");
 
-// router.get("/loginSetup", catchAsync(async (req, res) => {
-//     const hash = await bcrypt.hash(process.env.PASSWORD, 12);
-//     const user = new User({
-//         username: process.env.USERNAME,
-//         password: hash
-//     });
-//     await user.save();
-//     res.redirect("/login");
-// }));
+router.get("/loginSetup", catchAsync(async (req, res) => {
+    const hash = await bcrypt.hash(process.env.PASSWORD, 12);
+    const user = new User({
+        username: process.env.USERNAME,
+        password: hash
+    });
+    await user.save();
+    res.redirect("/login");
+}));
 
 router.get("/login", (req, res) => {
     res.render("login");
