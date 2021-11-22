@@ -9,7 +9,7 @@
         <% if(isLoggedIn) { %>
         <div class="d-flex justify-content-center mb-4">
             <a href="shows/new">
-                <button class="btn btn-primary btn-lg mt-2">New Show</button>
+                <button class="btn btn-primary btn-lg mt-2">Add New Show</button>
             </a>
         </div>
         <% } %>
@@ -20,7 +20,7 @@
                     <% if(!isLoggedIn) { %>
                     <tr class="d-flex flex-column flex-md-row text-light fs-5 gig-entry">
                         <td class="col-md-2 align-self-center border-bottom-0">
-                            <%= show.date.toString().slice(4, 15) %>
+                            <%= show.date.toLocaleDateString('de-DE', dateAppearance) %>
                         </td>
                         <td class="col-md-6 align-self-center border-bottom-0">
                             <b>
@@ -40,7 +40,7 @@
                     <% if(isLoggedIn) { %>
                     <tr class="d-flex flex-column flex-md-row text-light fs-5 gig-entry">
                         <td class="col-md-2 align-self-center border-bottom-0">
-                            <%= show.date.toString().slice(4, 15) %>
+                            <%= show.date.toLocaleDateString('de-DE', dateAppearance) %>
                         </td>
                         <td class="col-md-4 align-self-center border-bottom-0">
                             <b>

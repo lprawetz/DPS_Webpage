@@ -1,18 +1,12 @@
 const express = require("express");
 const router = express.Router();
+const music = require("../controllers/music");
 const catchAsync = require("../utils/catchAsync");
-const Record = require("../models/records");
 
-router.get("/", catchAsync(async (req, res) => {            //Music
-    const records = await Record.find({});
-    res.render("music/music", { records });
-}));
+//list records
+router.get("/", catchAsync(music.records));
 
-router.get("/:id", catchAsync(async (req, res) => {
-    const record = await Record.findById(req.params.id);
-    res.render("music/record", { record });
-}));
-
-
+//show record
+router.get("/:id", catchAsync(music.showRecord));
 
 module.exports = router;

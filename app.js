@@ -1,26 +1,27 @@
+//loads the dotenv module for local storage of environmental variables while working localy
+//also used in utils/sessionconfig
 if (process.env.NODE_ENV !== "production") {
     require("dotenv").config();
-}
+};
 
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
-const session = require("express-session");
 const flash = require("connect-flash");
 const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
 const helmet = require("helmet");
 const mongoSanitize = require('express-mongo-sanitize');
-
+const session = require("./utils/sessionconfig");
+//load page routes from routes folder
 const showsRoutes = require("./routes/shows");
 const musicRoutes = require("./routes/music");
 const mediaRoutes = require("./routes/media");
 const contactRoutes = require("./routes/contact");
 const userRoutes = require("./routes/user");
 
-const MongoStore = require("connect-mongo");
-
+//connect to online database or if not possible to localhost database
 const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/dpsband";
 
 mongoose.connect(dbUrl, {
@@ -42,29 +43,8 @@ app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-const store = MongoStore.create({
-    mongoUrl: dbUrl,
-    secret: process.env.SECRET,
-    touchAfter: 24 * 60 * 60
-});
-
-store.on("error", function (e) {
-    console.log("SESSION STORE ERROR", e)
-});
-
-const sessionConfig = {
-    store,
-    name: "session",
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        httpOnly: true,
-        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
-        maxAge: 1000 * 60 * 60 * 24 * 7
-    }
-}
-app.use(session(sessionConfig));
+//sessionConfig found under utils/sessionconfig
+app.use(session);
 app.use(flash());
 app.use(helmet({ contentSecurityPolicy: false }));
 
@@ -84,6 +64,7 @@ app.use((req, res, next) => {
     next();
 })
 
+//initialize routes from routes folder
 app.use("/shows", showsRoutes);
 app.use("/music", musicRoutes);
 app.use("/media", mediaRoutes);
@@ -95,10 +76,12 @@ app.get("/", (req, res) => {
     res.render("home");
 });
 
+//general error handling
 app.all("*", (req, res, next) => {
     next(new ExpressError("Page not found!", 404))
 });
 
+//specific error handling
 app.use((err, req, res, next) => {
     const { statusCode = 500 } = err;
     if (!err.message) err.message = "Something went wrong!"

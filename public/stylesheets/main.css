@@ -1,7 +1,7 @@
 /* General Styles */
 
 .background-banner {
-    background-image: url("/media/Backbanner.jpg");
+    background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1637407277/DPS_Static_Images/Backbanner_apjaec.jpg");
     background-size: cover;
     background-attachment: scroll;
     background-position: center top;
@@ -23,7 +23,7 @@
 }
 
 .background {
-    background-image: url("/media/Backblur.jpg");
+    background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1637420858/DPS_Static_Images/Background_ysmjkf.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
@@ -60,7 +60,7 @@ border-color: #335952;
 /* Home Styles */
 
 .home-background {
-    background-image: url("/media/Background_old.jpg");
+    background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1637408169/DPS_Static_Images/Home_Background_tjwajq.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
@@ -114,10 +114,23 @@ border-color: #335952;
 
 .record-cover {
     max-height: 27em;
+    box-shadow: 0 0 4em black;
 }
 
 /* Music Styles */
 
 .image-list {
     height: 18em;
+    box-shadow: 0 0 2em black;
+}
+
+/* Media Styles */
+
+.zoomed-img {
+    height: 37em;
+    box-shadow: 0 0 6em 7em black;
+}
+
+.modal-backdrop.show {
+    display: none;
 }
