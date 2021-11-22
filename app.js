@@ -22,7 +22,7 @@ const contactRoutes = require("./routes/contact");
 const userRoutes = require("./routes/user");
 
 //connect to online database or if not possible to localhost database
-const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/dpsband";
+const dbUrl = process.env.DB_URL;
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -88,7 +88,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error", { err });
 });
 
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server is running in Port ${port}!`)
 });
