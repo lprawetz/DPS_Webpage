@@ -19,6 +19,7 @@ html,body
     height: 20em;
     min-height: 250px;
     z-index: 10;
+    overscroll-behavior: none;
 }
 
 .backbanner-text {
@@ -39,6 +40,7 @@ html,body
     background-position: top;
     min-height: 70vh;
     z-index: 1;
+    overscroll-behavior: none;
 }
 
 .form-block {
@@ -75,6 +77,7 @@ border-color: #335952;
     background-attachment: fixed;
     background-position: top;
     height: 100vh;
+    overscroll-behavior: none;
 }
 
 /* Navbar Styles */
