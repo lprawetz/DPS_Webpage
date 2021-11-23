@@ -29,6 +29,7 @@ html,body
     font-size: 4em;
     z-index: 10;
     line-height: 1.6em;
+    
 }
 
 .background {
@@ -81,6 +82,16 @@ border-color: #335952;
 .navbar {
     z-index: 10;
     background: rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+    color: white;
+    transition: all 0.25s;
+}
+
+.nav-link:hover {
+    text-decoration: overline;
+    color: #1D4AD1;
 }
 
 /* Show Styles */
