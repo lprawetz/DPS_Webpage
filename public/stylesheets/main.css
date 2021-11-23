@@ -38,6 +38,7 @@ html,body
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
+    position: absolute;
     min-height: 70vh;
     z-index: 1;
     overscroll-behavior: none;
