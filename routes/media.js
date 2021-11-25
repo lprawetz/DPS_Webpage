@@ -4,7 +4,7 @@ const media = require("../controllers/media");
 const multer = require("multer");
 const { storage } = require("../utils/cloudinary");
 const upload = multer({ storage });
-const { isLoggedIn } = require("../middleware");
+const { isLoggedIn } = require("../utils/middleware");
 const catchAsync = require("../utils/catchAsync");
 
 //list media

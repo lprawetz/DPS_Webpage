@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const shows = require("../controllers/shows");
-const { validateShow, isLoggedIn } = require("../middleware");
+const { validateShow, isLoggedIn } = require("../utils/middleware");
 const catchAsync = require("../utils/catchAsync");
 
 //list shows

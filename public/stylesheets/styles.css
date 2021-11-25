@@ -61,11 +61,13 @@ background-color: #335952;
 border-color: #335952;
 }
 
+
 /* Login Styles */
 
 .login-box {
     height: 49.2vh;
 }
+
 
 /* Home Styles */
 
@@ -77,22 +79,25 @@ border-color: #335952;
     height: 100vh;
 }
 
+
 /* Navbar Styles */
 
 .navbar {
     z-index: 10;
     background: rgba(0, 0, 0, 0.2);
+    border-bottom: solid white;
 }
 
 .nav-link {
     color: white;
-    transition: all 0.25s;
+    transition: all 0.3s;
 }
 
 .nav-link:hover {
     text-decoration: overline;
     color: #1D4AD1;
 }
+
 
 /* Show Styles */
 
@@ -113,6 +118,7 @@ border-color: #335952;
     border-radius: 0%;
 }
 
+
 /* Footer Styles */
 
 #footer {
@@ -130,6 +136,7 @@ border-color: #335952;
     font-size: 1.7em;
 }
 
+
 /* Record Styles */
 
 .record-cover {
@@ -137,11 +144,17 @@ border-color: #335952;
     box-shadow: 0 0 4em black;
 }
 
+
 /* Music Styles */
 
-.image-list {
-    height: 18em;
-    box-shadow: 0 0 2em black;
+.cropped-img {
+    box-shadow: 0 0 1em black;
+    width: 350px;
+    height: 250px;
+}
+
+.fit-img {
+    object-fit: cover;
 }
 
 /* Media Styles */

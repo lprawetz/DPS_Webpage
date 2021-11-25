@@ -4,36 +4,30 @@
     <div class="d-flex justify-content-center background-banner">
         <h1 class="align-self-center text-center backbanner-text">MEDIA</h1>
     </div>
-    <div class="text-center">
-
-        <% if(isLoggedIn) { %>
-        <div class="d-flex justify-content-center mb-4">
-            <a href="./new">
-                <button class="btn btn-primary btn-lg mt-2">Add Media</button>
-            </a>
-        </div>
-        <% } %>
-        <div class="text-center">
-            <div class="container">
-                <% for(let i = 0; i<media.length; i++) { %>
-                <div class="d-inline-flex m-4">
-                    <!-- Button trigger modal -->
-                    <img src="<%= media[i].url %>" class="m-4 image-list" data-bs-toggle="modal"
-                        data-bs-target="#image<%= i %>">
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="image<%= i %>" tabindex="-1" aria-labelledby="imageLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="d-flex justify-content-center">
-                                <img src="<%= media[i].url %>" class=" zoomed-img">
-                            </div>
+    <% if(isLoggedIn) { %>
+    <div class="d-flex justify-content-center m-4">
+        <a href="./new">
+            <button class="btn btn-primary btn-lg mt-2">Add Media</button>
+        </a>
+    </div>
+    <% } %>
+    <div class="container mb-4">
+        <div class="row justify-content-center">
+            <% for(let i = 0; i<media.length; i++) { %>
+            <!-- Button trigger modal -->
+            <img src="<%= media[i].url %>" class="col-lg-4 col-sm-6 m-2 align-self-center cropped-img fit-img"
+                data-bs-toggle="modal" data-bs-target="#image<%= i %>">
+            <!-- Modal -->
+            <div class="modal fade" id="image<%= i %>" tabindex="-1" aria-labelledby="imageLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="d-flex justify-content-center">
+                            <img src="<%= media[i].url %>" class=" zoomed-img">
                         </div>
                     </div>
                 </div>
-                <% } %>
             </div>
+            <% } %>
         </div>
     </div>
 </div>

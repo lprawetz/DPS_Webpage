@@ -6,22 +6,22 @@
     </div>
     <div>
         <% if(isLoggedIn) { %>
-        <div class="d-flex justify-content-center mt-3">
+        <div class="d-flex justify-content-center m-4">
             <a href="shows/new">
-                <button class="btn btn-primary">New</button>
+                <button class="btn btn-primary btn-lg mt-2">New</button>
             </a>
         </div>
         <% } %>
-    </div>
-    <div class="text-center">
-        <div class="container">
-            <% for (let record of records) { %>
-            <div class="d-inline-flex m-4">
-                <a href="/music/<%= record._id %>">
-                    <img src="<%= record.cover %>" alt="<%= record.name %>" class="image-list">
-                </a>
+        <div class="text-center">
+            <div class="container">
+                <% for (let record of records) { %>
+                <div class="d-inline-flex m-4">
+                    <a href="/music/<%= record._id %>">
+                        <img src="<%= record.cover %>" alt="<%= record.name %>" class="image-list">
+                    </a>
+                </div>
+                <% } %>
             </div>
-            <% } %>
         </div>
     </div>
 </div>
