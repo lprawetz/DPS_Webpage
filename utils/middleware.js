@@ -1,5 +1,5 @@
 const { showSchema } = require("./schemas");
-const ExpressError = require("./expressError");
+const ExpressError = require("./ExpressError");
 
 module.exports.validateShow = (req, res, next) => {
     const { error } = showSchema.validate(req.body)
