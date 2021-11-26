@@ -9,7 +9,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const flash = require("connect-flash");
-const expressError = require("./utils/expressError");
+const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
 const helmet = require("helmet");
 const mongoSanitize = require('express-mongo-sanitize');
@@ -78,7 +78,7 @@ app.get("/", (req, res) => {
 
 //general error handling
 app.all("*", (req, res, next) => {
-    next(new expressError("Page not found!", 404))
+    next(new ExpressError("Page not found!", 404))
 });
 
 //specific error handling
@@ -88,7 +88,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error", { err });
 });
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server is running in Port ${port}!`)
 });
