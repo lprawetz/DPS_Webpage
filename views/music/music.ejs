@@ -4,24 +4,20 @@
     <div class="d-flex justify-content-center background-banner">
         <h1 class="align-self-center text-center backbanner-text">RECORDS</h1>
     </div>
-    <div>
-        <% if(isLoggedIn) { %>
-        <div class="d-flex justify-content-center m-4">
-            <a href="shows/new">
-                <button class="btn btn-primary btn-lg mt-2">New</button>
+    <% if(isLoggedIn) { %>
+    <div class="d-flex justify-content-center m-4">
+        <a href="shows/new">
+            <button class="btn btn-primary btn-lg mt-2">New</button>
+        </a>
+    </div>
+    <% } %>
+    <div class="container-fluid mb-4">
+        <div class="row justify-content-center">
+            <% for (let record of records) { %>
+            <a href="/music/<%= record._id %>" class="col-lg-4 col-sm-6 m-2 cropped-rec-img">
+                <img src="<%= record.cover %>" alt="<%= record.name %>" class="cropped-rec-img">
             </a>
-        </div>
-        <% } %>
-        <div class="text-center">
-            <div class="container">
-                <% for (let record of records) { %>
-                <div class="d-inline-flex m-4">
-                    <a href="/music/<%= record._id %>">
-                        <img src="<%= record.cover %>" alt="<%= record.name %>" class="image-list">
-                    </a>
-                </div>
-                <% } %>
-            </div>
+            <% } %>
         </div>
     </div>
 </div>
