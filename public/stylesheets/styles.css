@@ -141,10 +141,19 @@ border-color: #335952;
     height: 10em;
 }
 
-#icons {
-    font-size: 1.7em;
+.icon-row {
+    width: 15em;
 }
 
+#icon-box {
+    height: 30px;
+    width: 30px;
+}
+
+#footer-icon {
+    height: 30px;
+    width: 30px;
+} 
 
 /* Record Styles */
 
