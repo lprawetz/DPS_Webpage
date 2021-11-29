@@ -35,7 +35,7 @@ html,body
 
 .background {
     background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638206095/DPS_Static_Images/Background_compressed_cpiyse.jpg");
-    background-size: cover;
+    background-size: contain;
     background-attachment: fixed;
     background-position: top;
     transform: rotateX(0deg);
@@ -84,7 +84,7 @@ border-color: #335952;
 
 .home-background {
     background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638206456/DPS_Static_Images/Home_Background_Desktop_compressed_ckj9km.jpg");
-    background-size: cover;
+    background-size: contain;
     background-attachment: fixed;
     background-position: top;
     transform: rotateX(0deg);
