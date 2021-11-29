@@ -11,7 +11,7 @@ html,body
 
 .background-banner {
     background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638206266/DPS_Static_Images/Backbanner_compressed_lkemlf.jpg");
-    background-size: cover;
+    background-size: 100%;
     background-attachment: scroll;
     background-position: center top;
     background-repeat: no-repeat;
@@ -35,7 +35,7 @@ html,body
 
 .background {
     background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638206095/DPS_Static_Images/Background_compressed_cpiyse.jpg");
-    background-size: contain;
+    background-size: 100%;
     background-attachment: fixed;
     background-position: top;
     transform: rotateX(0deg);
@@ -84,7 +84,7 @@ border-color: #335952;
 
 .home-background {
     background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638206456/DPS_Static_Images/Home_Background_Desktop_compressed_ckj9km.jpg");
-    background-size: contain;
+    background-size: 100%;
     background-attachment: fixed;
     background-position: top;
     transform: rotateX(0deg);
