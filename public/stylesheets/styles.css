@@ -81,11 +81,17 @@ border-color: #335952;
 /* Home Styles */
 
 .home-background {
-    background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638199463/DPS_Static_Images/Home_Background_gvmetu.jpg");
+    background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638199901/DPS_Static_Images/Home_Background_Desktop_pycri2.jpg");
     background-size: cover;
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
     background-position: top;
     height: 100vh;
+}
+
+@media (max-width: 767px) {
+    .home-background {
+        background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638199463/DPS_Static_Images/Home_Background_gvmetu.jpg");
+    }
 }
 
 /* Navbar Styles */
