@@ -1,7 +1,7 @@
 const Show = require("../models/shows");
 
 module.exports.shows = async (req, res) => {
-    const dateAppearance = { weekday: 'short', day: '2-digit', month: 'long', year: '2-digit' };
+    const dateAppearance = { weekday: 'short', day: '2-digit', month: 'short', year: '2-digit' };
     const shows = await Show.find({}).sort({ date: "asc" });
     res.render("shows/shows", { shows, dateAppearance });
 };

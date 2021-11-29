@@ -15,7 +15,9 @@
         <div class="row justify-content-center">
             <% for (let record of records) { %>
             <a href="/music/<%= record._id %>" class="col-lg-4 col-sm-6 m-2 cropped-rec-img">
-                <img src="<%= record.cover %>" alt="<%= record.name %>" class="cropped-rec-img">
+                <div class="d-flex justify-content-center">
+                    <img src="<%= record.cover %>" alt="<%= record.name %>" class="cropped-rec-img">
+                </div>
             </a>
             <% } %>
         </div>

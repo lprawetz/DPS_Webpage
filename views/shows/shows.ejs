@@ -20,15 +20,21 @@
                     <% if(!isLoggedIn) { %>
                     <tr class="d-flex flex-column flex-md-row text-light fs-5 gig-entry">
                         <td class="col-md-2 align-self-center border-bottom-0">
-                            <%= show.date.toLocaleDateString('de-DE', dateAppearance) %>
+                            <div class="d-flex justify-content-start date-locat-position">
+                                <%= show.date.toLocaleDateString('de-DE', dateAppearance) %>
+                            </div>
                         </td>
                         <td class="col-md-6 align-self-center border-bottom-0">
-                            <b>
-                                <%= show.venue %>
-                            </b>
+                            <div class="d-flex justify-content-start venue-position">
+                                <b>
+                                    <%= show.venue %>
+                                </b>
+                            </div>
                         </td>
                         <td class="col-md-2 align-self-center border-bottom-0">
-                            <%= show.location %>
+                            <div class="d-flex justify-content-start date-locat-position">
+                                <%= show.location %>
+                            </div>
                         </td>
                         <td class="col-md-2 align-self-center border-bottom-0">
                             <a href="<%= show.ticketstore %>">
@@ -40,15 +46,21 @@
                     <% if(isLoggedIn) { %>
                     <tr class="d-flex flex-column flex-md-row text-light fs-5 gig-entry">
                         <td class="col-md-2 align-self-center border-bottom-0">
-                            <%= show.date.toLocaleDateString('de-DE', dateAppearance) %>
+                            <div class="d-flex justify-content-start date-locat-position">
+                                <%= show.date.toLocaleDateString('de-DE', dateAppearance) %>
+                            </div>
                         </td>
                         <td class="col-md-4 align-self-center border-bottom-0">
-                            <b>
-                                <%= show.venue %>
-                            </b>
+                            <div class="d-flex justify-content-start venue-position">
+                                <b>
+                                    <%= show.venue %>
+                                </b>
+                            </div>
                         </td>
                         <td class="col-md-2 align-self-center border-bottom-0">
-                            <%= show.location %>
+                            <div class="d-flex justify-content-start date-locat-position">
+                                <%= show.location %>
+                            </div>
                         </td>
                         <td class="col-md-2 align-self-center border-bottom-0">
                             <a href="<%= show.ticketstore %>">

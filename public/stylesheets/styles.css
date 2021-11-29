@@ -115,6 +115,23 @@ border-color: #335952;
 
 /* Show Styles */
 
+.venue-position {
+    margin-left: 100px;
+}
+
+.date-locat-position {
+    margin-left: 20px;
+}
+
+@media (max-width: 767px) {
+    .date-locat-position {
+        margin-left: 0px;
+    }
+    .venue-position {
+        margin-left: 0px;
+    }
+}
+
 .gig-entry {
     border-bottom: 1px solid rgba(128, 166, 158, 0.5);
 }
@@ -179,7 +196,10 @@ border-color: #335952;
 .cropped-rec-img {
     width: 300px;
     height: 300px;
+    offset: 100px 100px;
 }
+
+
 
 .fit-img {
     object-fit: cover;
