@@ -33,7 +33,7 @@ html,body
 
 .background {
     background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638206095/DPS_Static_Images/Background_compressed_cpiyse.jpg");
-    background-size: 100%;
+    background-size: cover;
     background-attachment: fixed;
     background-position: top;
     transform: rotateX(0deg);
@@ -99,8 +99,8 @@ border-color: #335952;
 /* Navbar Styles */
 
 .navbar {
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
     border-bottom: solid white;
 }
 
