@@ -12,12 +12,11 @@ html,body
 .background-banner {
     background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638206266/DPS_Static_Images/Backbanner_compressed_lkemlf.jpg");
     background-size: 100%;
-    background-attachment: scroll;
+    background-attachment: local;
     background-position: center top;
     background-repeat: no-repeat;
     transform: rotateX(0deg);
-    height: 20em;
-    min-height: 250px;
+    min-height: 350px;
     z-index: 10;
 }
 
@@ -30,7 +29,6 @@ html,body
     font-size: 4em;
     z-index: 10;
     line-height: 1.6em;
-    
 }
 
 .background {
@@ -45,7 +43,7 @@ html,body
 
 @media (max-width: 768px) {
     .background-banner {
-        max-height: 12em;
+        min-height: 30vw;
     }
     .backbanner-text {
         font-size: 2em;
