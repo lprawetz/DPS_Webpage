@@ -10,11 +10,12 @@ html,body
 }
 
 .background-banner {
-    background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1637407277/DPS_Static_Images/Backbanner_apjaec.jpg");
+    background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638206266/DPS_Static_Images/Backbanner_compressed_lkemlf.jpg");
     background-size: cover;
     background-attachment: scroll;
     background-position: center top;
     background-repeat: no-repeat;
+    transform: rotateX(0deg);
     height: 20em;
     min-height: 250px;
     z-index: 10;
@@ -33,10 +34,11 @@ html,body
 }
 
 .background {
-    background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1637420858/DPS_Static_Images/Background_ysmjkf.jpg");
+    background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638206095/DPS_Static_Images/Background_compressed_cpiyse.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
+    transform: rotateX(0deg);
     min-height: 70vh;
     z-index: 1;
 }
@@ -81,16 +83,18 @@ border-color: #335952;
 /* Home Styles */
 
 .home-background {
-    background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638199901/DPS_Static_Images/Home_Background_Desktop_pycri2.jpg");
+    background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638206456/DPS_Static_Images/Home_Background_Desktop_compressed_ckj9km.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
+    transform: rotateX(0deg);
     height: 100vh;
 }
 
 @media (max-width: 767px) {
     .home-background {
-        background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638199463/DPS_Static_Images/Home_Background_gvmetu.jpg");
+        background-image: url("https://res.cloudinary.com/dpspx/image/upload/v1638206455/DPS_Static_Images/Home_Background_compressed_qrccdu.jpg");
+        transform: rotateX(0deg);
     }
 }
 
