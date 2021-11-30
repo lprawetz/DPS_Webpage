@@ -42,9 +42,9 @@ html,body
 }
 
 @media (max-width: 768px) {
-    /* .background-banner {
+    .background-banner {
         min-height: 30vw;
-    } */
+    }
     .backbanner-text {
         font-size: 2em;
     }
